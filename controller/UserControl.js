@@ -1,52 +1,50 @@
-import express from "express";
-import bodyParser from "body-parser";
-import { users } from "../model/index.js"
-import {verifyAToken} from "../middleware/AuthenticateUser.js"
+import express from 'express'
+import bodyParser from 'body-parser'
+import { users } from '../model/index.js'
+import { verifyAToken } from "../middleware/AuthenticateUser.js"
 
 const userRouter = express.Router()
 
-
-//=====USERS=====//
 userRouter.get('/', (req, res)=>{
     try{
         users.fetchUsers(req, res)
-    }catch(e){
+    }catch(e) {
         res.json({
-            status: res.statusCode,
-            msg: "Failed to retrieve all Users"
+            status: res.statusCode, 
+            msg: 'Failed to retrieve users'
         })
     }
 })
 
 userRouter.get('/:id', (req, res)=>{
     try{
-        users.fetchUsers(req, res)
-    }catch(e){
+        users.fetchUser(req, res)
+    }catch(e) {
         res.json({
             status: res.statusCode,
-            msg: "Failed to retrieve Single Users"
+            msg: 'Failed to retrieve a user'
         })
     }
 })
 
-userRouter.post('/register',bodyParser, (req, res)=>{
+userRouter.post('/register', bodyParser.json(), (req, res)=>{
     try{
         users.createUser(req, res)
-    }catch(e){
+    }catch(e) {
         res.json({
             status: res.statusCode,
-            msg: "Failed to add a User"
-        })
+            msg: 'Failed to add a new user.'
+        }) 
     }
 })
 
-userRouter.patch('/update/:id', bodyParser, (req, res)=>{
+userRouter.patch('/update/:id', bodyParser.json(), (req, res)=>{
     try{
         users.updateUser(req, res)
-    }catch(e){
+    }catch(e) {
         res.json({
-            status: statusCode,
-            msg: "Failed to update User"
+            status: res.statusCode, 
+            msg: "Failed to update a user"
         })
     }
 })
@@ -54,25 +52,50 @@ userRouter.patch('/update/:id', bodyParser, (req, res)=>{
 userRouter.delete('/delete/:id', (req, res)=>{
     try{
         users.deleteUser(req, res)
-    }catch(e){
+    }catch(e) {
         res.json({
-            status: statusCode,
-            msg: "Failed to delete User"
+            status: res.statusCode,
+            msg: "Failed to delete a user."
         })
     }
+    
 })
 
-userRouter.post('/login', bodyParser, (req, res)=>{
+userRouter.post('/login', bodyParser.json(), (req, res)=>{
     try{
         users.login(req, res)
-    }catch(e){
+    }catch(e) {
         res.json({
-            status: statusCode,
-            msg: "Failed to Log In"
+            status: res.statusCode,
+            msg: "Failed to log in"
         })
     }
 })
 
+//=== Trying cart api path-ing ===//
+// userRouter.get('/:id/carts', (req, res)=>{
+//     try{
+//         users.fetchCarts(req, res)
+//     }catch(e) {
+//         res.json({
+//             status: res.statusCode,
+//             msg: 'Failed to retrieve all items from cart'
+//         })
+//     }
+// })
+
+// userRouter.get('/:id/cart/:id', (req, res)=>{
+//     try{
+//         users.fetchUser(req, res),
+//         users.fetchCart(req, res)
+//     }catch(e) {
+//         res.json({
+//             status: res.statusCode,
+//             msg: 'Failed to retrieve cart ID'
+//         })
+//     }
+// })
+
 export{
-    userRouter,express
+    userRouter, express
 }
