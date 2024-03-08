@@ -74,5 +74,5 @@ userRouter.post('/login', bodyParser, (req, res)=>{
 })
 
 export{
-    userRouter
+    userRouter,express
 }
