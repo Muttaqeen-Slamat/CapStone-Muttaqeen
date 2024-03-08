@@ -1,5 +1,5 @@
 import express from "express";
-import bodyParser, { json } from "body-parser";
+import bodyParser from "body-parser";
 import { users } from "../model/index.js"
 import {verifyAToken} from "../middleware/AuthenticateUser.js"
 
@@ -29,7 +29,7 @@ userRouter.get('/:id', (req, res)=>{
     }
 })
 
-userRouter.post('/register', (req, res)=>{
+userRouter.post('/register',bodyParser, (req, res)=>{
     try{
         users.createUser(req, res)
     }catch(e){
@@ -40,7 +40,7 @@ userRouter.post('/register', (req, res)=>{
     }
 })
 
-userRouter.patch('/update/:id', (req, res)=>{
+userRouter.patch('/update/:id', bodyParser, (req, res)=>{
     try{
         users.updateUser(req, res)
     }catch(e){
@@ -62,7 +62,7 @@ userRouter.delete('/delete/:id', (req, res)=>{
     }
 })
 
-userRouter.post('/login', (req, res)=>{
+userRouter.post('/login', bodyParser, (req, res)=>{
     try{
         users.login(req, res)
     }catch(e){
