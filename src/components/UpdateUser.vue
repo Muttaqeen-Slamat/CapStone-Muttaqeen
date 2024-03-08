@@ -67,8 +67,8 @@
               userRole:'',
               gender:'',
               age: '',
-              email:'',
-              emailPwd:'',
+            //   email:'',
+            //   emailPwd:'',
               // userProfile:'https://i.postimg.cc/pTLmhdpj/placeholder-person.jpg'
             }
           }
