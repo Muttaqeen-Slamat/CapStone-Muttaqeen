@@ -1,11 +1,19 @@
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </nav>
+  <NavBar/>
   <router-view/>
+  <FooterComp/>
 </template>
 
+<script>
+import NavBar from './components/NavBar'
+import FooterComp from './components/FooterComp'
+export default{
+  components:{
+    NavBar,FooterComp
+  }
+}
+</script>
+  
 <style>
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
