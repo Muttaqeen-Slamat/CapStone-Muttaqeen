@@ -72,3 +72,7 @@ userRouter.post('/login', (req, res)=>{
         })
     }
 })
+
+export{
+    userRouter
+}
