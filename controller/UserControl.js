@@ -13,7 +13,7 @@ userRouter.get('/', (req, res)=>{
     }catch(e){
         res.json({
             status: res.statusCode,
-            message: "Failed to retrieve all Users"
+            msg: "Failed to retrieve all Users"
         })
     }
 })
@@ -24,7 +24,7 @@ userRouter.get('/:id', (req, res)=>{
     }catch(e){
         res.json({
             status: res.statusCode,
-            message: "Failed to retrieve Single Users"
+            msg: "Failed to retrieve Single Users"
         })
     }
 })
@@ -35,7 +35,7 @@ userRouter.post('/register',bodyParser, (req, res)=>{
     }catch(e){
         res.json({
             status: res.statusCode,
-            message: "Failed to add a User"
+            msg: "Failed to add a User"
         })
     }
 })
@@ -46,7 +46,7 @@ userRouter.patch('/update/:id', bodyParser, (req, res)=>{
     }catch(e){
         res.json({
             status: statusCode,
-            message: "Failed to update User"
+            msg: "Failed to update User"
         })
     }
 })
@@ -57,7 +57,7 @@ userRouter.delete('/delete/:id', (req, res)=>{
     }catch(e){
         res.json({
             status: statusCode,
-            message: "Failed to delete User"
+            msg: "Failed to delete User"
         })
     }
 })
@@ -68,7 +68,7 @@ userRouter.post('/login', bodyParser, (req, res)=>{
     }catch(e){
         res.json({
             status: statusCode,
-            message: "Failed to Log In"
+            msg: "Failed to Log In"
         })
     }
 })
