@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&family=Protest+Riot&display=swap" rel="stylesheet">
+    <title>Static</title>
+</head>
+<body>
+    <h1>
+        Static Structure
+    </h1>
+    <table>
+        <h3>
+            Home path
+        </h3>
+        <thead>
+            <th>Path</th>
+            <th>Http Methods</th>
+            <th>Description</th>
+        </thead>
+        <tbody>
+            <tr>
+                <td>/</td>
+                <td>Get</td>
+                <td>'This static page'</td>
+            </tr>
+        </tbody>
+    </table>
+    <table>
+        <h3>
+            Routes information for products
+        </h3>
+        <thead>
+            <th>Path</th>
+            <th>Http Methods</th>
+            <th>Description</th>
+        </thead>
+        <tbody>
+            <tr>
+                <td>/products</td>
+                <td>Get</td>
+                <td>'Home page'</td>
+            </tr>
+            <tr>
+                <td>/:id</td>
+                <td>Get</td>
+                <td>'Fetching a single product by id'</td>
+            </tr>
+            <tr>
+                <td>/addProduct</td>
+                <td>Post</td>
+                <td>'adding a product'</td>
+            </tr>
+            <tr>
+                <td>/updateProduct/:id</td>
+                <td>Patch</td>
+                <td>'updating a product'</td>
+            </tr>
+            <tr>
+                <td>/deleteProduct/:id</td>
+                <td>delete</td>
+                <td>'deleting a product'</td>
+            </tr>
+           
+        </tbody>
+    </table>
+    <table>
+        <h3>
+            Routes information for users
+        </h3>
+        <thead>
+            <th>Path</th>
+            <th>Http Methods</th>
+            <th>Description</th>
+        </thead>
+        <tr>
+            <td>/users</td>
+            <td>Get</td>
+            <td>'Fetching all the users'</td>
+        </tr>
+        <tr>
+            <td>/:id</td>
+            <td>Get</td>
+            <td>'Fetching a single user by id'</td>
+        </tr>
+        <tr>
+            <td>/register</td>
+            <td>Post</td>
+            <td>'Adding/registering a user'</td>
+        </tr>
+        <tr>
+            <td>/updateUser/:id</td>
+            <td>Patch</td>
+            <td>'updating a user'</td>
+        </tr>
+        <tr>
+            <td>/deleteUser/:id</td>
+            <td>Delete</td>
+            <td>'Deleting a user'</td>
+        </tr>
+    </table>
+    <table>
+        <h3>
+            Routes information for products
+        </h3>
+        <thead>
+            <th>Path</th>
+            <th>Http Methods</th>
+            <th>Description</th>
+        </thead>
+        <tbody>
+            <tr>
+                <td>/login</td>
+                <td>patch</td>
+                <td>'login via email and password'</td>
+            </tr>   
+        </tbody>
+    </table>
+
+
+</body>
+</html>
