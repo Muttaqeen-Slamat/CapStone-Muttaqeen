@@ -92,7 +92,7 @@
                   <updateProduct :product="product" />
                   <button
                     id="deleteBut"
-                    class="btn btn-success deleteButton"
+                    class="btn deleteButton"
                     @click="(event) => deleteProduct(product.prodID)"
                   >
                     Delete
@@ -146,5 +146,21 @@ import AddProduct from '../components/AddProduct'
 img{
     width: 200px;
 }
+.deleteButton{
+  background-color:#d0368a;
+  border-radius: 5px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 0 20px;
+  cursor: pointer;
+}
 
+.deleteButton:hover{
+  background-color: crimson;
+  color: white;
+  /* transform: translateY(-2px); */
+  transform: translate(2%,-2px)
+}
 </style>

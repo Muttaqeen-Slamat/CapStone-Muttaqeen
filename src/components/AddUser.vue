@@ -129,7 +129,7 @@
     height: 52px;
   margin-bottom: 10px;
   margin-top: 60px;
-  background-color:rgb(39,142,86);
+  background-color: #d0368a;
   color: white;
   border-radius: 5px;
   box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
@@ -141,7 +141,7 @@
   }
 
   .modalButton:hover {
-    background-color: rgb(35, 211, 105);
+    background-color: #708ad4;
   color: white;
   transform: translateY(-2px);
 }

@@ -1,38 +1,46 @@
 <template>
-  <NavBar/>
-  <router-view/>
-  <FooterComp/>
+  <div id="app">
+    <NavBar/>
+    <router-view/>
+    <FooterComp/>
+  </div>
 </template>
 
 <script>
 import NavBar from './components/NavBar'
 import FooterComp from './components/FooterComp'
-export default{
-  components:{
-    NavBar,FooterComp
+
+export default {
+  components: {
+    NavBar,
+    FooterComp
   }
 }
 </script>
   
 <style>
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family: "Madimi One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
 }
 
-nav {
-  padding: 30px;
+::-webkit-scrollbar{
+  width: 15px;
 }
 
-nav a {
-  font-weight: bold;
-  color: #2c3e50;
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px rgb(255, 255, 255); 
+  border-radius: 10px;
 }
 
-nav a.router-link-exact-active {
-  color: #42b983;
+::-webkit-scrollbar-thumb {
+  background:linear-gradient(72.5deg, #d0368a 0%, #708ad4 99%);; 
+  border-radius: 10px;
 }
+
 </style>
