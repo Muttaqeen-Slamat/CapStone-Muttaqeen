@@ -72,6 +72,10 @@ userRouter.post('/login', bodyParser.json(), (req, res)=>{
     }
 })
 
+export{
+    userRouter, express
+}
+
 //=== Trying cart api path-ing ===//
 // userRouter.get('/:id/carts', (req, res)=>{
 //     try{
@@ -96,6 +100,3 @@ userRouter.post('/login', bodyParser.json(), (req, res)=>{
 //     }
 // })
 
-export{
-    userRouter, express
-}

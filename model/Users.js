@@ -132,6 +132,12 @@ class Users{
             }
         })
     }
+
+}
+
+export {
+    Users
+}
     //== trying cart api ==//
 //     fetchCarts(req, res) {
 //         const qry = `
@@ -181,8 +187,3 @@ class Users{
 //             })
 //         })
 //     }
-}
-
-export {
-    Users
-}
