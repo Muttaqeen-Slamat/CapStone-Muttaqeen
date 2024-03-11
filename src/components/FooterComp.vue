@@ -16,6 +16,7 @@
       </div>
       <div class="col">
         <p>Col 3 test</p>
+        <i class="bi bi-github"></i>
       </div>
      </div>
    </div>
