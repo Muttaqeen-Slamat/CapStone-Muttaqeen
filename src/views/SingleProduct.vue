@@ -3,6 +3,11 @@
         <div class="row">
             <h2 class="display-2">Product Details</h2>
         </div>
+        <div>
+            <router-link to="/products">
+                <p>Go back to products</p>
+            </router-link>
+        </div>
         <div class="row">
             <Card v-if="product">
                 <template #cardHeader>
