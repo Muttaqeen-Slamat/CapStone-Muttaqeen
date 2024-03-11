@@ -111,7 +111,7 @@
         //     `
         });
         setTimeout(() => {
-            router.push({name:'test'})
+            router.push({name:'admin'})
         //   window.location.reload();
         }, 2000);
 
