@@ -125,9 +125,8 @@
   
   <style scoped>
   .modalButton {
-
-  background-color: #d0368a;
-  color: white;
+    color: white;
+    background-color:#d0368a;
   border-radius: 5px;
   box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
   transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
@@ -138,8 +137,10 @@
   }
 
   .modalButton:hover {
-    background-color: #708ad4;
+    background-color: blueviolet;
   color: white;
-  transform: translateY(-2px);
+  /* transform: translateY(-2px); */
+  transform: translate(2%,-2px);
+  box-shadow: 5px 5px 8px rgba(0, 0, 0, 0.2);
 }
   </style>

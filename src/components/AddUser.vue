@@ -1,7 +1,7 @@
 <template>
     <!-- Button trigger modal -->
   <button type="button " class="btn modalButton" data-bs-toggle="modal" data-bs-target="#exampleModal">
-  Create User
+  Add User
   </button>
   
   <!-- Modal -->
@@ -141,6 +141,7 @@
   }
 
   .modalButton:hover {
+    
     background-color: #708ad4;
   color: white;
   transform: translateY(-2px);
