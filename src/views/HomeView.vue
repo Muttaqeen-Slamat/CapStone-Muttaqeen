@@ -5,7 +5,7 @@
     <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
   <div class="carousel-inner">
     <div class="carousel-item active">
-      <img src="https://i.postimg.cc/pLgsfNMc/Untitled-design.png" class="" alt="...">
+      <img src="https://i.postimg.cc/bwd2X7dP/GPu-Sale.png" class="" alt="...">
     </div>
     <div class="carousel-item">
       <img src="https://i.postimg.cc/vBmxDB2J/Untitled-design-1.png" class="" alt="...">
@@ -29,7 +29,7 @@
 
   <div class="d-flex justify-content-between">
     <h3 class="thead1">Test heading1</h3>
-    <router-link to="/products">
+    <router-link to="/product#try">
       <h3 class="span1">view more</h3>
     </router-link>
   </div>
