@@ -55,7 +55,7 @@
 
   <script>
   import Swal from 'sweetalert2'
-  import router from '@/router'
+  // import router from '@/router'
     export default {
         name: 'AddUser',
         data(){
@@ -110,10 +110,10 @@
         //     no-repeat
         //     `
         });
-        setTimeout(() => {
-            router.push({name:'admin'})
-        //   window.location.reload();
-        }, 2000);
+        // setTimeout(() => {
+        //     router.push({name:'admin'})
+        // //   window.location.reload();
+        // }, 2000);
 
   } catch (error) {
     console.error(error);
