@@ -115,9 +115,10 @@
 import AddUser from "../components/AddUser"
 import AddProduct from '../components/AddProduct' 
 import UpdateUser from "@/components/UpdateUser.vue";
+import updateProduct from "../components/UpdateProduct.vue"
     export default {
         components:{
-            AddUser,AddProduct,UpdateUser
+            AddUser,AddProduct,UpdateUser,updateProduct
         },
         computed:{
             users(){
