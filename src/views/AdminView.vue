@@ -3,9 +3,9 @@
         <AddUser/>
     </div>
     <div>
-        <div class="container">
+        <div class="container ">
           <div class="table-responsive">
-            <table class="table">
+            <table class="table table-hover">
           <thead>
             <tr>
               <th>User ID</th>
@@ -51,7 +51,7 @@
 
       <div class="container">
           <div class="table-responsive">
-            <table class="table">
+            <table class="table table-hover">
             <thead>
               <tr>
                 <th>Product ID</th>

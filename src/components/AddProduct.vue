@@ -56,7 +56,7 @@
             payload: {
               prodID: '',
               prodName:'',
-              img: 'https://i.ibb.co/9nbYmVZ/tshirt5.jpg',
+              img: 'https://i.postimg.cc/XJYqPq88/0-j-Gm-Qz-OLa-Eobi-Nkl-D.png',
               category: '',
               quantity:'',
               prodPrice:'',

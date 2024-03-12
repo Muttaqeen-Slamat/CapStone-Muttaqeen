@@ -3,7 +3,7 @@
         <div class="row">
             <h2 class="display-2">Products</h2>
         </div>
-        <div class="row" v-if="product">
+        <div class="row d-flex align-items-center justify-content-center" v-if="product">
             <Card v-for="product in product" :key="product.prodID">
                 <template #cardHeader>
                     <h4 class="card-title">{{ product.prodName }}</h4>
@@ -51,6 +51,7 @@ import Card from '@/components/Card.vue';
 
 img{
     width: 200px;
+    aspect-ratio: 1/1;
 }
 
 </style>
