@@ -1,10 +1,11 @@
 import { createStore } from 'vuex'
 import axios from 'axios'
 import Swal from 'sweetalert2'
-import { useCookies } from 'vue3-cookies'
+// import { useCookies } from 'vue3-cookies'
 // const {cookies} = useCookies()
 import router from '@/router'
-import AuthenticateUser from '@/service/AuthenticateUser'
+// import AuthenticateUser from '@/service/AuthenticateUser'
+import {applyToken} from '../service/AuthenticateUser.js'
 const capUrl = 'https://capstone-muttaqeen.onrender.com/'
 
 export default createStore({
@@ -179,75 +180,41 @@ export default createStore({
     },
     async login(context, payload) {
       try {
-        const { msg, token, result } = (await axios.post(`${capUrl}users/login`, payload)).data;
-        if (result) {
-          context.commit('setUser', { msg, result });
-          context.dispatch('setUser');
-          useCookies().set('LegitUser', {
-            msg,
-            token,
-            result
-          });
-          AuthenticateUser.applyToken(token);
+        const response = await axios.post('https://capstone-muttaqeen.onrender.com/users/login', payload);
+        const { msg, token, result } = response.data;
+
+        if (token) {
+          context.commit('setUser', result);
+          applyToken(token);
+
+          document.cookie = `userAuthenticated=${JSON.stringify({ msg, token, result })}; path=/`;
+
           Swal.fire({
-            title: 'Update Successful',
-            text: 'User has been updated successfully!',
-            icon: 'success',
-            timer: 2000,
-            showConfirmButton: true
-          });
-          router.push({ name: 'home' });
-        } else {
-          Swal.fire({
-            title: 'info',
-            text: msg,
-            icon: 'info',
+            title: msg,
+            text: `Welcome back, ${result.firstName} ${result.lastName}`,
+            icon: "success",
             timer: 2000
           });
+
+          router.push({ name: 'admin' });
+        } else {
+          Swal.fire({
+            title: 'Info',
+            text: msg,
+            icon: 'info',
+            timer: 2000,
+          });
         }
-      } catch (e) {
+      } catch (error) {
+        console.error('Error during login:', error);
         Swal.fire({
           title: 'Error',
-          text: 'Failed to login',
+          text: 'Failed to login. Please try again later.',
           icon: 'error',
-          timer: 2000
+          timer: 2000,
         });
       }
     },
-    // async login(context,payload){
-    // try{
-    //   const {msg,token,result}=(await axios.post(`${capUrl}users/login`,payload)).data
-    //   if(result){
-    //     context.commit('setUser',{msg,result})
-    //     cookies.set('LegitUser',{
-    //       msg,token,result
-    //     })
-    //     AuthenticateUser.applyToken(token)
-    //     Swal.fire({
-    //       title: 'Update Successful',
-    //       text: 'User has been updated successfully!',
-    //       icon: 'success',
-    //       timer: 2000,
-    //       showConfirmButton: true
-    //     })
-    //     router.push({name:'home'})
-    //   }else{
-    //     Swal.fire({
-    //       title:'info',
-    //       text:msg,
-    //       icon:'info',
-    //       timer:2000
-    //     })
-    //   }
-    // }catch(e){
-    //   Swal.fire({
-    //     title:'Error',
-    //     text:'Failed to login',
-    //     icon:'error',
-    //     timer:2000
-    //   })
-    // }
-    // },
         // Products
         async fetchProducts(context){
           try{
