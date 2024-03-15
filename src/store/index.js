@@ -61,29 +61,6 @@ export default createStore({
           });
       }
   },
-    // async register(context,payload){
-    //   try{
-    //     let{msg}=(await axios.post(`${capUrl}users/register`,payload))
-    //     if(msg){
-    //       context.dispatch('setUser')
-    //         // Swal.fire({
-    //           // title: 'Update Successful',
-    //           // text: 'User has been updated successfully!',
-    //           // icon: 'success',
-    //           // timer: 2000,
-    //           // showConfirmButton: true
-    //         // })
-    //     }
-    //   }catch(e){
-    //     //   Swal.fire({
-    //     //     title: 'Error',
-    //     //     text: 'Failed to update user',
-    //     //     icon: 'error',
-    //     //     timer: 2000
-    //     // })
-    //   }
-    // },
-
     async fetchUsers(context){
       try{
         let {results}=(await axios.get(`${capUrl}users`)).data

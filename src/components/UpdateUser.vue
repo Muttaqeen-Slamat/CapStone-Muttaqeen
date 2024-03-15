@@ -1,6 +1,7 @@
 <template>
     <!-- Button trigger modal -->
-  <button type="button " class="btn modalButton" data-bs-toggle="modal" data-bs-target="#updateUserModal">
+    <button type="button " class="btn modalButton" data-bs-toggle="modal" data-bs-target="#updateUserModal">
+    <i class="bi bi-pencil-square"></i>
   Update 
   </button>
   
@@ -73,22 +74,8 @@
             }
           }
         },
-        // computed: {
-        //   message(){
-        //     return this.store.state.message
-        //   }
-        // },
         methods: {
-  // async register() {
-  //   try {
-  //     await this.$store.dispatch('register', this.payload);
-  //     // Optionally, show a success message here
-  //   } catch (error) {
-  //     // Handle any errors or show error messages
-  //     console.error(error);
-  //   }
-  //   window.location.reload();
-  // }
+
   async updateUser() {
   try {
     await this.$store.dispatch('updateUser', { id: this.payload.userID, data: this.payload });
@@ -125,14 +112,15 @@
   
   <style scoped>
   .modalButton {
-    color: white;
-    background-color:#d0368a;
+    color: black;
+    /* background-color:#d0368a; */
   border-radius: 5px;
+  border: 2px solid black;
   box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
   transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
   font-size: 16px;
   font-weight: bold;
-  padding: 0 20px;
+  /* padding: 0 20px; */
   cursor: pointer;
   }
 

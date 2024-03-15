@@ -36,6 +36,7 @@
                   class="btn deleteButton"
                   @click="(event) => deleteUser(user.userID)"
                 >
+                <i class="bi bi-trash"></i>
                   Delete
                 </button>
               </td>
@@ -88,13 +89,14 @@
                   {{ product.quantity }}
                 </td>
                 <td>{{ product.prodDesc }}</td>
-                <td class="d-flex gap-2">
+                <td class="d-flex flex-column gap-4">
                   <updateProduct :product="product" />
                   <button
                     id="deleteBut"
                     class="btn deleteButton"
                     @click="(event) => deleteProduct(product.prodID)"
                   >
+                  <i class="bi bi-trash"></i>
                     Delete
                   </button>
                 </td>
@@ -149,14 +151,15 @@ img{
     width: 200px;
 }
 .deleteButton{
-  background-color:#d0368a;
-  color: white;
+  /* background-color:#d0368a; */
+  color: black;
   border-radius: 5px;
+  border: 2px solid black;
   box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
   transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
   font-size: 16px;
   font-weight: bold;
-  padding: 0 20px;
+  /* padding: 0 20px; */
   cursor: pointer;
 }
 

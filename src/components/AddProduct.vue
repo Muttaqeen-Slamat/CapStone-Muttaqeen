@@ -70,16 +70,7 @@
           }
         },
         methods: {
-  //         async addProduct() {
-  //   try {
-  //     await this.$store.dispatch('addProduct', this.payload);
-  //     // Optionally, show a success message here
-  //   } catch (error) {
-  //     // Handle any errors or show error messages
-  //     console.error(error);
-  //   }
-  //   window.location.reload();
-  // }
+
   async addProduct() {
   try {
     await this.$store.dispatch('addProduct', this.payload );
@@ -119,8 +110,10 @@
     height: 52px;
   margin-bottom: 10px;
   margin-top: 60px;
-  background-color:#d0368a;
-  color: white;
+  /* background-color:#d0368a; */
+  border: 2px solid black;
+
+  color: black;
   border-radius: 5px;
   box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
   transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
