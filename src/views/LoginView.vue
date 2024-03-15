@@ -2,42 +2,31 @@
 <template>
   <div class="container-fluid">
     <!-- Login form -->
-    <div class="mb-3">
-      <input type="email" class="form-control w-50 mx-auto" required placeholder="Email" v-model="payload.email">
+    <!-- <div class="mb-3 form-floating" >
+      <input type="email" class="form-control w-50 mx-auto" required placeholder="Email" id="floatingInput" v-model="payload.email">
+      <label for="floatingInput">Email address</label>
     </div>
     <div class="mb-3">
       <div class="row">
         <div class="col">
-          <input
-            class="form-control w-50 mx-auto"
-            required
-            placeholder="Password"
-            v-model="payload.emailPwd"
-          />
+          <input class="form-control w-50 mx-auto" required placeholder="Password" v-model="payload.emailPwd">
         </div>
       </div>
     </div>
-    <button type="button" class="btn btn-primary" @click="login">Login</button>
+    <button type="button" class="btn btn-primary" @click="login">Login</button> -->
     <form>
     <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
 
-    <div class="form-floating">
-      <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+    <div class="form-floating w-50 mx-auto m-3">
+      <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" v-model="payload.email">
       <label for="floatingInput">Email address</label>
     </div>
-    <div class="form-floating">
-      <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+    <div class="form-floating w-50 mx-auto m-3">
+      <input type="password" class="form-control"  id="floatingPassword" placeholder="Password" v-model="payload.emailPwd">
       <label for="floatingPassword">Password</label>
     </div>
 
-    <div class="form-check text-start my-3">
-      <input class="form-check-input" type="checkbox" value="remember-me" id="flexCheckDefault">
-      <label class="form-check-label" for="flexCheckDefault">
-        Remember me
-      </label>
-    </div>
-    <button class="btn btn-primary w-100 py-2" type="submit">Sign in</button>
-    <p class="mt-5 mb-3 text-body-secondary">© 2017–2024</p>
+    <button class="btn btn-primary " type="button" @click="login">Sign in</button>
   </form>
   </div>
 </template>
@@ -73,5 +62,9 @@ export default {
 form {
     display: block;
     margin-top: 0em;
+}
+
+button{
+  margin-bottom: 100px;
 }
 </style>
