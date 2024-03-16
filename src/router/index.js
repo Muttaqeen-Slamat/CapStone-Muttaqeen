@@ -43,6 +43,11 @@ const routes = [
     path: '/contact',
     name: 'contact',
     component: () => import('../views/ContactView.vue')
+  },
+  {
+    path: '/users/:id',
+    name: 'profile',
+    component: () => import('../views/ProfileView.vue')
   }
 ]
 

@@ -173,7 +173,7 @@ export default createStore({
             timer: 2000
           });
 
-          router.push({ name: 'admin' });
+          router.push({ name: 'home' });
         } else {
           Swal.fire({
             title: 'Info',

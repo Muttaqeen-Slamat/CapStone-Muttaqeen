@@ -29,6 +29,9 @@
         <li class="nav-item">
           <router-link class="nav-link active" aria-current="page" to="/contact">Contact</router-link>
         </li>
+        <li class="nav-item">
+            <button v-if="loggedInUser" class="nav-link active" @click="goToProfile">{{ loggedInUser.firstName }} {{ loggedInUser.lastName }}</button>
+          </li>
       </ul>
     </div>
   </div>
@@ -38,7 +41,16 @@
 
 <script>
     export default {
-        
+      computed: {
+    loggedInUser() {
+      return this.$store.state.user; 
+    }
+  },
+  methods: {
+    goToProfile() {
+      this.$router.push('/users/:id');
+    }
+  }
     }
 </script>
 
