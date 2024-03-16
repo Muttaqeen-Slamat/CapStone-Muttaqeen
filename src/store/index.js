@@ -13,7 +13,9 @@ export default createStore({
     user: null,
     users: null,
     product: null,
-    products: null
+    products: null,
+    cart: null,
+    carts: null
   },
   getters: {
   },
@@ -29,6 +31,12 @@ export default createStore({
     },
     setProducts(state, value){
       state.products = value
+    },
+    setCart(state, value){
+      state.cart = value
+    },
+    setCarts(state, value){
+      state.cart = value
     },
   },
   actions: {
@@ -304,7 +312,44 @@ export default createStore({
               });
             console.error('Error updating user:',e)
           }
-        }
+        },
+        async fetchCarts(context){
+          try{
+            let {results}=
+            (await axios.get(`${capUrl}carts`)).data
+            if(results){
+              context.commit('setProducts',results)
+            }
+          }
+          catch(e){
+            Swal.fire({
+              title: 'Update Successful',
+              text: 'User has been updated successfully!',
+              icon: 'success',
+              timer: 2000,
+              showConfirmButton: true
+            })
+          }
+        },
+        // async fetchCart(context){
+        //   try{
+        //     let {results}=
+        //     (await axios.get(`${capUrl}cart/`)).data
+        //     if(results){
+        //       context.commit('setProducts',results)
+        //     }
+        //   }
+        //   catch(e){
+        //     Swal.fire({
+        //       title: 'Update Successful',
+        //       text: 'User has been updated successfully!',
+        //       icon: 'success',
+        //       timer: 2000,
+        //       showConfirmButton: true
+        //     })
+    
+        //   }
+        // },
   },
   modules: {
   }
