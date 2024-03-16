@@ -35,6 +35,20 @@ class Cart {
       });
     });
   }
+  fetchUserCarts(req, res) {
+    const qry = `
+      SELECT *
+      FROM UserCart;
+    `;
+
+    db.query(qry, (err, results) => {
+      if (err) throw err;
+      res.json({
+        status: res.statusCode,
+        results,
+      });
+    });
+  }
 
   updateCart(req, res) {
     const cartID = req.params.cartID;

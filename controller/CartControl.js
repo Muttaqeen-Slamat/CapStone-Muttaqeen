@@ -26,6 +26,17 @@ cartRouter.get('/getCart/:userID', (req, res) => {
     }
 });
 
+cartRouter.get('/getCart', (req, res) => {
+    try {
+        cart.fetchUserCarts(req, res);
+    } catch (e) {
+        res.json({
+            status: res.statusCode,
+            msg: 'Failed to fetch the user cart.',
+        });
+    }
+});
+
 cartRouter.patch('/updateCart/:cartID', bodyParser.json(), (req, res) => {
     try {
         cart.updateCart(req, res);
