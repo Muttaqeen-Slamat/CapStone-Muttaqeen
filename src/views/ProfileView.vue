@@ -17,7 +17,7 @@
             </form>
             
             <!-- Delete Button -->
-            <button @click="deleteUser">Delete Account</button>
+            <button @click="(event) => deleteUser(user.userID)">Delete Account</button>
           </div>
         </div>
       </div>
@@ -26,6 +26,7 @@
   
   <script>
   import { mapState, mapActions } from 'vuex';
+  import router from '@/router'
   
   export default {
     computed: {
@@ -50,6 +51,7 @@
       },
       deleteUser(userID) {
         this.$store.dispatch("deleteUser", { id: userID });
+        router.push({name: 'home'})
       }
     }
   }
