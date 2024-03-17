@@ -129,9 +129,8 @@
   cursor: pointer;
   }
 
-  .modalButton:hover {
-    
-    background-color: #708ad4;
+  .modalButton:hover { 
+  background:linear-gradient(72.5deg, crimson 0%, blueviolet 99%); 
   color: white;
   transform: translateY(-2px);
 }
