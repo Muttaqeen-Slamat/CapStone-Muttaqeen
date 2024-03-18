@@ -14,7 +14,7 @@
                     <h4 class="card-title">{{ product.prodName }}</h4>
                 </template>
                 <template #cardBody>
-                    <img :src="product.img" :alt="`${ product.prodName }`">
+                    <img :src="product.img" class="img-fluid" :alt="`${ product.prodName }`">
                     <p class="card-text text-dark bg-gradient p-2">
                         R{{ product.prodPrice }}
                     </p>
