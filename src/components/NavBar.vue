@@ -29,8 +29,8 @@
         <li class="nav-item">
           <router-link class="nav-link active" aria-current="page" to="/contact">Contact</router-link>
         </li>
-        <li class="nav-item">
-            <button v-if="loggedInUser" class="nav-link active" @click="goToProfile">{{ loggedInUser.firstName }} {{ loggedInUser.lastName }}</button>
+        <li class="nav-item profile">
+            <button v-if="loggedInUser" class="nav-link active profile text-light" @click="goToProfile" aria-current="page">{{ loggedInUser.firstName }} {{ loggedInUser.lastName }}</button>
           </li>
       </ul>
     </div>
@@ -91,5 +91,19 @@ nav a{
      transform: scaleX(1);
      transform-origin: bottom left;
     }
-
+.profile:hover{
+  background-color: blueviolet;
+  color:  white;
+  border-radius: 25px;
+}
+.profile{
+  background-color: blueviolet;
+  color:  white;
+  border-radius: 25px;
+}
+.profile.router-link-active{
+  background-color: blueviolet;
+  color: white;
+  border-radius: 25px;
+}
 </style>
