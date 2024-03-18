@@ -1,6 +1,6 @@
 <template>
     <div>
-        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <nav class="navbar navbar-expand-lg bg-body-secondary">
   <div class="container-fluid">
     <a class="navbar-brand" href="/">Logo Placeholder</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -55,5 +55,41 @@
 </script>
 
 <style scoped>
+
+nav a{
+        display: inline-block;
+     position: relative;
+     color: rgb(0, 0, 0) ;
+     text-decoration: none;
+     margin: 0 10px;
+     transition: color 0.3s ease-in-out;
+      }
+    
+    nav a.router-link-active {
+      /* font-size: 15px; */
+      font-style: italic;
+      font-weight: bold;
+    }
+    
+      /* nav a:hover {
+        color: orangered; 
+      }  */
+      nav a::after {
+     content: '';
+     position: absolute;
+     width: 100%;
+     height: 2px;
+     bottom: 0;
+     left: 0;
+     background-color: blueviolet;
+     transform: scaleX(0);
+     transform-origin: bottom right;
+     transition: transform 0.25s ease-out;
+    }
+    
+    nav a:hover::after {
+     transform: scaleX(1);
+     transform-origin: bottom left;
+    }
 
 </style>

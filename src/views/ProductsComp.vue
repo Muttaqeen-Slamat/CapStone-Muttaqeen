@@ -8,7 +8,7 @@
             <input type="text" v-model="searchQuery" placeholder="Search products">
         </div>
         <!-- Products list -->
-        <div class="row d-flex align-items-center justify-content-center" v-if="filteredProducts.length">
+        <div class="row d-flex align-items-center justify-content-center" >
             <Card v-for="product in filteredProducts" :key="product.prodID">
                 <template #cardHeader>
                     <h4 class="card-title">{{ product.prodName }}</h4>
@@ -41,16 +41,15 @@ export default {
         };
     },
     computed: {
-        product() {
-            return this.$store.state.products;
-        },
-        filteredProducts() {
-            // Filter products based on search query
-            return this.product.filter(product =>
-                product.prodName.toLowerCase().includes(this.searchQuery.toLowerCase())
-            );
-        }
+    product() {
+        return this.$store.state.products || []; // Return an empty array if products state is null
     },
+    filteredProducts() {
+        return this.product.filter(product =>
+            product.prodName.toLowerCase().includes(this.searchQuery.toLowerCase())
+        );
+    }
+},
     methods: {
         sortProducts() {
             // You can implement sorting logic here
