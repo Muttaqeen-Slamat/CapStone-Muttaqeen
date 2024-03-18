@@ -3,7 +3,7 @@
     <!-- User Profile -->
     <div class="container">
       <div class="row">
-        <div class="col">
+        <div class="col" v-if="user">
           <h2>{{user.firstName}} {{user.lastName}}</h2>
           <p>Username: {{ user.userName }}</p>
           <p>First Name: {{ user.firstName }}</p>
@@ -22,41 +22,48 @@
 </template>
 
 <script>
-import { mapState, mapActions } from 'vuex';
-import router from '@/router'
-// import UpdateProfile from '@/components/UpdateProfile.vue';
-
 export default {
-  // components:{
-    // UpdateProfile
-  // },
-  computed: {
-    ...mapState({
-      user: state => state.user
-    })
-  },
   data() {
     return {
-      updatedUser: {
-        firstName: '',
-        lastName: '',
-        email: ''
-      }
+      user: null
     };
   },
+  mounted() {
+    this.fetchUserData();
+  },
   methods: {
-    ...mapActions(['deleteUser']),
-    deleteUser(userID) {
-      this.$store.dispatch("deleteUser", { id: userID });
-      setTimeout(()=>{
-        router.push({name: 'home'})
-      },3000),
-      setTimeout(() => {
-        window.location.reload();
-      }, 3000);
+    fetchUserData() {
+      const cookies = document.cookie.split(';').map(cookie => cookie.trim());
+      const userCookie = cookies.find(cookie => cookie.startsWith('userAuthenticated='));
+      if (userCookie) {
+        try {
+          const userData = JSON.parse(userCookie.split('=')[1]);
+          if (userData && userData.result) {
+            this.user = userData.result;
+          } else {
+            console.error('Invalid user data format:', userData);
+          }
+        } catch (error) {
+          console.error('Error parsing user data:', error);
+        }
+      } else {
+        console.log('No user data available in cookies');
+      }
+    },
+    editUser() {
+      this.$router.push({ name: 'editProfile' });
+    },
+    async deleteUser() {
+      try {
+        await this.$store.dispatch('deleteUser', { id: this.user._id });
+        this.fetchUserData(); // Fetch updated user data after deletion
+        this.$router.push('/login');
+      } catch (error) {
+        console.error('Error deleting user:', error);
+      }
     }
   }
-}
+};
 </script>
 
 <style>
