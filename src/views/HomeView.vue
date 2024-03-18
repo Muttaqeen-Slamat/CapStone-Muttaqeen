@@ -29,7 +29,7 @@
 
   <div class="d-flex justify-content-between">
     <h3 class="thead1">Test heading1</h3>
-    <router-link to="/product#try">
+    <router-link to="/products#try">
       <h3 class="span1">view more</h3>
     </router-link>
   </div>
