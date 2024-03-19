@@ -43,7 +43,27 @@
 export default {
   computed: {
     loggedInUser() {
-      return this.$store.state.user || [];
+      // Fetch user data from cookies
+      const cookies = document.cookie.split(';').map(cookie => cookie.trim());
+      const userCookie = cookies.find(cookie => cookie.startsWith('userAuthenticated='));
+      
+      // If user cookie exists, parse and return user data
+      if (userCookie) {
+        try {
+          const userData = JSON.parse(userCookie.split('=')[1]);
+          if (userData && userData.result) {
+            return userData.result; // Return user data with firstName and lastName
+          } else {
+            console.error('Invalid user data format:', userData);
+            return null;
+          }
+        } catch (error) {
+          console.error('Error parsing user data:', error);
+          return null;
+        }
+      } else {
+        return null; // Return null if user cookie doesn't exist
+      }
     },
     isAdmin() {
       return this.loggedInUser && this.loggedInUser.userRole === "Admin";
