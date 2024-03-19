@@ -25,12 +25,12 @@
               <input type="text" v-model="editedUser.gender" />
               <label>Age:</label>
               <input type="number" v-model="editedUser.age" />
-              <button type="submit">Save</button>
-              <button @click="cancelEdit">Cancel</button>
+              <button type="submit" class="save">Save</button>
+              <button @click="cancelEdit" class="cancel">Cancel</button>
             </form>
           </div>
           <div>
-            <button @click="editProfile">Edit</button>
+            <button @click="editProfile" class="editButton">Edit</button>
           </div>
           <div class="d-flex justify-content-between">
             <button @click="(event) => deleteUser(user.userID)" class="deleteButton">Delete Account</button>
@@ -110,7 +110,14 @@ export default {
 </script>
 
 <style>
-.deleteButton {
+.logoutButton:hover {
+  background-color: blueviolet;
+  color: white;
+  /* transform: translateY(-2px); */
+  transform: translate(2%, -2px);
+  box-shadow: 5px 5px 8px rgba(0, 0, 0, 0.2);
+}
+.logoutButton {
   /* background-color:#d0368a; */
   color: black;
   border-radius: 5px;
@@ -123,14 +130,7 @@ export default {
   cursor: pointer;
 }
 
-.logoutButton:hover {
-  background-color: crimson;
-  color: white;
-  /* transform: translateY(-2px); */
-  transform: translate(2%, -2px);
-  box-shadow: 5px 5px 8px rgba(0, 0, 0, 0.2);
-}
-.logoutButton {
+.deleteButton {
   /* background-color:#d0368a; */
   color: black;
   border-radius: 5px;
@@ -150,8 +150,45 @@ export default {
   transform: translate(2%, -2px);
   box-shadow: 5px 5px 8px rgba(0, 0, 0, 0.2);
 }
+
+.editButton{
+  color: black;
+  border-radius: 5px;
+  border: 2px solid black;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+  font-size: 16px;
+  font-weight: bold;
+  /* padding: 0 20px; */
+  cursor: pointer;
+}
+
+.editButton:hover{
+  background-color: #1dd583;
+  color: black;
+  /* transform: translateY(-2px); */
+  transform: translate(2%, -2px);
+  box-shadow: 5px 5px 8px rgba(0, 0, 0, 0.2);
+}
+
 .container {
   margin-top: 75px;
   margin-bottom: 75px;
 }
+
+input{
+  border-radius: 25px;
+  padding: 5px;
+  text-align: center;
+}
+
+.save{
+  border-radius: 5px;
+  width: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
 </style>
