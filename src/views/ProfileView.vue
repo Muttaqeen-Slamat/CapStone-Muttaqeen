@@ -13,13 +13,15 @@
           <p>Age: {{ user.age }}</p>
           
           <!-- Delete Button -->
-          <button @click="(event) => deleteUser(user.userID)" class="deleteButton">Delete Account</button>
-          <button @click="logoutUser" class="logoutButton">Logout</button>
           <!-- <UpdateProfile/> -->
         </div>
       </div>
+      <div class="d-flex justify-content-between">
+        <button @click="(event) => deleteUser(user.userID)" class="deleteButton">Delete Account</button>
+        <button @click="logoutUser" class="logoutButton">Logout</button> 
+      </div>
     </div>
-  </div>
+  </div> 
 </template>
 
 <script>
@@ -54,15 +56,10 @@ export default {
     editUser() {
       this.$router.push({ name: 'editProfile' });
     },
-    async deleteUser() {
-      try {
-        await this.$store.dispatch('deleteUser', { id: this.user._id });
-        this.fetchUserData(); // Fetch updated user data after deletion
+    deleteUser(userID) {
+        this.$store.dispatch("deleteUser", { id: userID });
         this.$router.push('/login');
-      } catch (error) {
-        console.error('Error deleting user:', error);
-      }
-    },
+      },
     logoutUser() {
       this.$store.dispatch('logout');
     }
@@ -72,6 +69,26 @@ export default {
 
 <style>
 .deleteButton{
+/* background-color:#d0368a; */
+color: black;
+border-radius: 5px;
+border: 2px solid black;
+box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+font-size: 16px;
+font-weight: bold;
+/* padding: 0 20px; */
+cursor: pointer;
+}
+
+.logoutButton:hover{
+background-color: crimson;
+color: white;
+/* transform: translateY(-2px); */
+transform: translate(2%,-2px);
+box-shadow: 5px 5px 8px rgba(0, 0, 0, 0.2);
+}
+.logoutButton{
 /* background-color:#d0368a; */
 color: black;
 border-radius: 5px;
