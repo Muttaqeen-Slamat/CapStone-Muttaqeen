@@ -178,10 +178,14 @@ export default createStore({
             title: msg,
             text: `Welcome back, ${result.firstName} ${result.lastName}`,
             icon: "success",
-            timer: 2000
+            timer: 2000,
+            showConfirmButton: false
           });
 
           router.push({ name: 'home' });
+          setTimeout(() => {
+            window.location.reload();
+          }, 1750);
         } else {
           Swal.fire({
             title: 'Info',

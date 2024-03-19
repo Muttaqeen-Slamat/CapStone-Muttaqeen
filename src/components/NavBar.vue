@@ -23,18 +23,18 @@
             <li class="nav-item" v-if="isAdmin">
               <router-link class="nav-link active" aria-current="page" to="/admin">Admin</router-link>
             </li>
-            <li class="nav-item">
-              <router-link class="nav-link active" aria-current="page" to="/signup">Signup</router-link>
-            </li>
-            <li class="nav-item">
-              <router-link class="nav-link active" aria-current="page" to="/login">Login</router-link>
-            </li>
-            <li class="nav-item profile">
-              <button v-if="loggedInUser" class="nav-link active profile text-light" @click="goToProfile" aria-current="page">{{ loggedInUser.firstName }} {{ loggedInUser.lastName }}</button>
-            </li>
-          </ul>
-        </div>
+            <li class="nav-item" v-if="!loggedInUser">
+            <router-link class="nav-link active" aria-current="page" to="/signup">Signup</router-link>
+          </li>
+          <li class="nav-item" v-if="!loggedInUser">
+            <router-link class="nav-link active" aria-current="page" to="/login">Login</router-link>
+          </li>
+          <li class="nav-item profile" v-if="loggedInUser">
+            <button class="nav-link active profile text-light" @click="goToProfile" aria-current="page">{{ loggedInUser.firstName }} {{ loggedInUser.lastName }}</button>
+          </li>
+        </ul>
       </div>
+    </div>
     </nav>
   </div>
 </template>
