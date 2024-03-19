@@ -221,7 +221,12 @@ async logout({ commit }) {
       text: 'You have been logged out successfully.',
       icon: 'success',
       timer: 2000,
+      showConfirmButton: false
+      
     });
+    setTimeout(() => {
+      window.location.reload();
+    }, 1750);
   } catch (error) {
     console.error('Error during logout:', error);
     Swal.fire({

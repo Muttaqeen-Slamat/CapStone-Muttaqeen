@@ -6,10 +6,6 @@
       
 
       <div class="row mt-3">
-        <div class="col">
-          <p>News Feed</p>
-        </div>
-
         <div class="col text-decoration-underline">
           <p>Pages</p>
           <a href="/about">
