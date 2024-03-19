@@ -50,6 +50,23 @@
     goToProfile() {
       this.$router.push('/users/:id');
     }
+  },
+  mounted() {
+    // Fetch user data from cookies and set it in the Vuex store
+    const cookies = document.cookie.split(';').map(cookie => cookie.trim());
+    const userCookie = cookies.find(cookie => cookie.startsWith('userAuthenticated='));
+    if (userCookie) {
+      try {
+        const userData = JSON.parse(userCookie.split('=')[1]);
+        if (userData && userData.result) {
+          this.$store.dispatch('setUser', userData.result);
+        } else {
+          console.error('Invalid user data format:', userData);
+        }
+      } catch (error) {
+        console.error('Error parsing user data:', error);
+      }
+    }
   }
     }
 </script>

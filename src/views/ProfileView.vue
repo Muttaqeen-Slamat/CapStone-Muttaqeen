@@ -14,6 +14,7 @@
           
           <!-- Delete Button -->
           <button @click="(event) => deleteUser(user.userID)" class="deleteButton">Delete Account</button>
+          <button @click="logoutUser" class="logoutButton">Logout</button>
           <!-- <UpdateProfile/> -->
         </div>
       </div>
@@ -61,6 +62,9 @@ export default {
       } catch (error) {
         console.error('Error deleting user:', error);
       }
+    },
+    logoutUser() {
+      this.$store.dispatch('logout');
     }
   }
 };
