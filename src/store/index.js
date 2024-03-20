@@ -353,7 +353,7 @@ async logout({ commit }) {
         },
         async fetchUserCart(context, payload) {
           try {
-            const { data } = await axios.get(`${capUrl}carts/getCart/${payload.userID}`);
+            const { data } = await axios.get(`${capUrl}cart/getCart/${payload.userID}`);
             if (data.results) {
               // Assuming you have a mutation named setCart to update the cart state
               context.commit('setCart', data.results);
