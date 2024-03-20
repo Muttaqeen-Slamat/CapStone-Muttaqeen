@@ -145,7 +145,7 @@ import updateProduct from "../components/UpdateProduct.vue"
         mounted(){
             this.$store.dispatch("fetchUsers");
             this.$store.dispatch("fetchProducts");
-            this.$store.dispatch('fetchUserCart');
+            this.$store.dispatch('fetchUserCarts');
         },
         methods: {
           deleteUser(userID) {

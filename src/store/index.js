@@ -367,11 +367,27 @@ async logout({ commit }) {
             });
           }
         },
+        async fetchUserCarts(context, payload) {
+          try {
+            const { data } = await axios.get(`${capUrl}cart/${payload.userID}`);
+            if (data.results) {
+              // Assuming you have a mutation named setCart to update the cart state
+              context.commit('setCart', data.results);
+            }
+          } catch (error) {
+            Swal.fire({
+              title: 'Error',
+              text: 'Failed to fetch user cart. Please try again later.',
+              icon: 'error',
+              timer: 2000,
+            });
+          }
+        },
     
         // Add a product to the user's cart
         async addToCart(context, payload) {
           try {
-            const response = await axios.post(`${capUrl}carts/addCart`, payload);
+            const response = await axios.post(`${capUrl}cart/addCart`, payload);
             if (response.data.status === 200) {
               // Optionally, you can fetch the updated cart after adding a product
               context.dispatch('fetchUserCart', { userID: payload.userID });
@@ -403,7 +419,7 @@ async logout({ commit }) {
         // Remove a product from the user's cart
         async removeFromCart(context, payload) {
           try {
-            const response = await axios.delete(`${capUrl}carts/removeFromCart/${payload.cartID}`);
+            const response = await axios.delete(`${capUrl}cart/removeFromCart/${payload.cartID}`);
             if (response.data.status === 200) {
               // Optionally, you can fetch the updated cart after removing a product
               context.dispatch('fetchUserCart', { userID: payload.userID });
@@ -435,7 +451,7 @@ async logout({ commit }) {
         // Update a product in the user's cart
         async updateCart(context, payload) {
           try {
-            const response = await axios.patch(`${capUrl}carts/updateCart/${payload.cartID}`, payload.data);
+            const response = await axios.patch(`${capUrl}cart/updateCart/${payload.cartID}`, payload.data);
             if (response.data.status === 200) {
               // Optionally, you can fetch the updated cart after updating a product
               context.dispatch('fetchUserCart', { userID: payload.userID });
