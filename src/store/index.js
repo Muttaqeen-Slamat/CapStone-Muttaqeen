@@ -351,22 +351,116 @@ async logout({ commit }) {
             console.error('Error updating user:',e)
           }
         },
-        async fetchCarts(context){
-          try{
-            let {results}=
-            (await axios.get(`${capUrl}carts`)).data
-            if(results){
-              context.commit('setProducts',results)
+        async fetchUserCart(context, payload) {
+          try {
+            const { data } = await axios.get(`${capUrl}carts/getCart/${payload.userID}`);
+            if (data.results) {
+              // Assuming you have a mutation named setCart to update the cart state
+              context.commit('setCart', data.results);
             }
-          }
-          catch(e){
+          } catch (error) {
             Swal.fire({
-              title: 'Update Successful',
-              text: 'User has been updated successfully!',
-              icon: 'success',
+              title: 'Error',
+              text: 'Failed to fetch user cart. Please try again later.',
+              icon: 'error',
               timer: 2000,
-              showConfirmButton: true
-            })
+            });
+          }
+        },
+    
+        // Add a product to the user's cart
+        async addToCart(context, payload) {
+          try {
+            const response = await axios.post(`${capUrl}carts/addCart`, payload);
+            if (response.data.status === 200) {
+              // Optionally, you can fetch the updated cart after adding a product
+              context.dispatch('fetchUserCart', { userID: payload.userID });
+    
+              Swal.fire({
+                title: 'Success',
+                text: 'Product added to cart successfully.',
+                icon: 'success',
+                timer: 2000,
+              });
+            } else {
+              Swal.fire({
+                title: 'Error',
+                text: 'Failed to add product to cart.',
+                icon: 'error',
+                timer: 2000,
+              });
+            }
+          } catch (error) {
+            Swal.fire({
+              title: 'Error',
+              text: 'Failed to add product to cart. Please try again later.',
+              icon: 'error',
+              timer: 2000,
+            });
+          }
+        },
+    
+        // Remove a product from the user's cart
+        async removeFromCart(context, payload) {
+          try {
+            const response = await axios.delete(`${capUrl}carts/removeFromCart/${payload.cartID}`);
+            if (response.data.status === 200) {
+              // Optionally, you can fetch the updated cart after removing a product
+              context.dispatch('fetchUserCart', { userID: payload.userID });
+    
+              Swal.fire({
+                title: 'Success',
+                text: 'Product removed from cart successfully.',
+                icon: 'success',
+                timer: 2000,
+              });
+            } else {
+              Swal.fire({
+                title: 'Error',
+                text: 'Failed to remove product from cart.',
+                icon: 'error',
+                timer: 2000,
+              });
+            }
+          } catch (error) {
+            Swal.fire({
+              title: 'Error',
+              text: 'Failed to remove product from cart. Please try again later.',
+              icon: 'error',
+              timer: 2000,
+            });
+          }
+        },
+    
+        // Update a product in the user's cart
+        async updateCart(context, payload) {
+          try {
+            const response = await axios.patch(`${capUrl}carts/updateCart/${payload.cartID}`, payload.data);
+            if (response.data.status === 200) {
+              // Optionally, you can fetch the updated cart after updating a product
+              context.dispatch('fetchUserCart', { userID: payload.userID });
+    
+              Swal.fire({
+                title: 'Success',
+                text: 'Cart updated successfully.',
+                icon: 'success',
+                timer: 2000,
+              });
+            } else {
+              Swal.fire({
+                title: 'Error',
+                text: 'Failed to update cart.',
+                icon: 'error',
+                timer: 2000,
+              });
+            }
+          } catch (error) {
+            Swal.fire({
+              title: 'Error',
+              text: 'Failed to update cart. Please try again later.',
+              icon: 'error',
+              timer: 2000,
+            });
           }
         },
         // async fetchCart(context){
