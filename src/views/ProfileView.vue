@@ -13,7 +13,7 @@
           <p>Age: {{ user.age }}</p>
 
           <!-- Edit Form -->
-          <div v-if="editing">
+          <div v-if="editing" class="container border border-3 rounded-5 py-3 px-3">
             <form @submit.prevent="updateUser" class="d-flex flex-column" >
               <label>First Name:</label>
               <input type="text" v-model="editedUser.firstName" />
@@ -25,8 +25,10 @@
               <input type="text" v-model="editedUser.gender" />
               <label>Age:</label>
               <input type="number" v-model="editedUser.age" />
-              <button type="submit" class="save">Save</button>
-              <button @click="cancelEdit" class="cancel">Cancel</button>
+              <div class="d-flex justify-content-center justify-content-evenly">
+                <button type="submit" class="save">Save</button>
+                <button @click="cancelEdit" class="cancel">Cancel</button>
+              </div>
             </form>
           </div>
           <div>
@@ -165,7 +167,7 @@ export default {
 
 .editButton:hover{
   background-color: #1dd583;
-  color: black;
+  color: white;
   /* transform: translateY(-2px); */
   transform: translate(2%, -2px);
   box-shadow: 5px 5px 8px rgba(0, 0, 0, 0.2);
@@ -176,19 +178,32 @@ export default {
   margin-bottom: 75px;
 }
 
-input{
-  border-radius: 25px;
-  padding: 5px;
-  text-align: center;
+input[type="text"],
+input[type="email"],
+input[type="number"] {
+  border: 2px solid #ccc; /* Add border */
+  border-radius: 5px; /* Add border-radius */
+  padding: 8px; /* Add padding */
+  width: 100%; /* Make the input full width */
+  margin-bottom: 10px; /* Add some space below the input */
+  box-sizing: border-box; /* Ensure padding and border are included in the width */
 }
 
-.save{
+.save {
   border-radius: 5px;
-  width: 50px;
+  width: 100px; /* Adjust button width */
   display: flex;
   justify-content: center;
   align-items: center;
-
 }
+
+.cancel {
+  border-radius: 5px;
+  width: 100px; /* Adjust button width */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 
 </style>
