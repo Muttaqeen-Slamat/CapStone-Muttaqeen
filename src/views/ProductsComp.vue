@@ -91,12 +91,12 @@ img {
     aspect-ratio: 1/1;
 }
 
-input {
+/* input {
     width: auto;
     padding: 10px;
     border: 1px solid;
     border-radius: 50px;
-}
+} */
 
 .filterB {
     position: relative;

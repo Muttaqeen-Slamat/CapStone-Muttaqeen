@@ -43,4 +43,8 @@ export default {
   border-radius: 10px;
 }
 
+input {
+    border-radius: 25px;
+  }
+
 </style>
