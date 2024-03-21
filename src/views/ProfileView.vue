@@ -29,6 +29,9 @@
                 <button type="submit" class="save">Save</button>
                 <button @click="cancelEdit" class="cancel">Cancel</button>
               </div>
+              <div class="mt-4">
+                <p>*Update to Profile will apply when you log in again*</p>
+              </div>
             </form>
           </div>
           <div>

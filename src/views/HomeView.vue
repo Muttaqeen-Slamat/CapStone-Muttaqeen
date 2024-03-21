@@ -1,7 +1,7 @@
 <template>
   <div class="home container-fluid">
     <!-- Carousel -->
-    <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+    <div id="carouselExampleAutoplaying" class="carousel slide mt-3" data-bs-ride="carousel">
       <div class="carousel-inner">
         <div class="carousel-item active">
           <img src="https://i.postimg.cc/bwd2X7dP/GPu-Sale.png" class="" alt="..." />
