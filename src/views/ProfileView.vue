@@ -178,9 +178,7 @@ export default {
   margin-bottom: 75px;
 }
 
-input[type="text"],
-input[type="email"],
-input[type="number"] {
+input[type="text"], input[type="email"], input[type="number"] {
   border: 2px solid #ccc; /* Add border */
   border-radius: 5px; /* Add border-radius */
   padding: 8px; /* Add padding */
