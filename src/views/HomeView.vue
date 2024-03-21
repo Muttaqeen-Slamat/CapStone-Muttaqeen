@@ -33,7 +33,7 @@
       <h3 class="thead1">Lucky Products</h3>
     </div>
     <div class="row d-flex align-items-center justify-content-center justify-content-evenly">
-      <Card v-for="product in shuffledProducts" :key="product.prodID">
+      <Card v-for="product in shuffledProducts" :key="product.prodID" class="mb-3">
         <template #cardHeader>
           <h6 class="card-title">{{ product.prodName }}</h6>
         </template>
