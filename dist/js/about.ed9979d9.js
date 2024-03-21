@@ -1,0 +1,2 @@
+"use strict";(self["webpackChunkcapstone_muttaqeen_frontend"]=self["webpackChunkcapstone_muttaqeen_frontend"]||[]).push([[594],{603:function(n,t,e){e.r(t),e.d(t,{default:function(){return d}});var u=e(641);const a={class:"about"},r=(0,u.Lk)("h1",null,"This is an about page",-1),s=[r];function c(n,t){return(0,u.uX)(),(0,u.CE)("div",a,s)}var o=e(6262);const f={},i=(0,o.A)(f,[["render",c]]);var d=i}}]);
+//# sourceMappingURL=about.ed9979d9.js.map

@@ -4,61 +4,59 @@ import { cart } from '../model/index.js'; // Adjust the path accordingly
 
 const cartRouter = express.Router();
 
-cartRouter.post('/addCart', bodyParser.json(), (req, res) => {
+cartRouter.get('/', (req, res) => {
     try {
-        cart.addToCart(req, res);
+        cart.fetchCarts(req, res);
     } catch (e) {
         res.json({
             status: res.statusCode,
-            msg: 'Failed to add the product to the cart.',
+            msg: 'Failed to retrieve carts'
         });
     }
 });
 
-cartRouter.get('/getCart/:userID', (req, res) => {
+cartRouter.get('/:id', (req, res) => {
     try {
-        cart.fetchUserCart(req, res);
+        cart.fetchCart(req, res);
     } catch (e) {
         res.json({
             status: res.statusCode,
-            msg: 'Failed to fetch the user cart.',
+            msg: 'Failed to retrieve the cart'
         });
     }
 });
 
-cartRouter.get('/getCart', (req, res) => {
+cartRouter.post('/add', bodyParser.json(), (req, res) => {
     try {
-        cart.fetchUserCarts(req, res);
+        cart.createCart(req, res);
     } catch (e) {
         res.json({
             status: res.statusCode,
-            msg: 'Failed to fetch the user cart.',
+            msg: 'Failed to add a new cart.'
         });
     }
 });
 
-cartRouter.patch('/updateCart/:cartID', bodyParser.json(), (req, res) => {
+cartRouter.patch('/update/:id', bodyParser.json(), (req, res) => {
     try {
         cart.updateCart(req, res);
     } catch (e) {
         res.json({
             status: res.statusCode,
-            msg: 'Failed to update the cart.',
+            msg: 'Failed to update the cart'
         });
     }
 });
 
-cartRouter.delete('/removeFromCart/:cartID', (req, res) => {
+cartRouter.delete('/delete/:id', (req, res) => {
     try {
-        cart.removeFromCart(req, res);
+        cart.deleteCart(req, res);
     } catch (e) {
         res.json({
             status: res.statusCode,
-            msg: 'Failed to remove the product from the cart.',
+            msg: 'Failed to delete the cart.'
         });
     }
 });
 
-export { 
-    cartRouter 
-};
+export { cartRouter };
