@@ -1,9 +1,9 @@
 <template>
     <div class="container">
-      <div class="row">
+      <div class="row mt-3">
         <h1>Contact</h1>
       </div>
-      <div class="row">
+      <div class="row mt-5 mb-5">
         <div class="col">
           <div>
             <h2 class="text-decoration-underline">Reach me on:</h2>
@@ -39,7 +39,7 @@
             </label>
           </div>
           <!-- your other form fields go here -->
-          <button type="submit" class="my-3">Send</button>
+          <button type="submit" class="my-3 send">Send</button>
         </form>
       </div>
     </div>
@@ -84,5 +84,30 @@ export default {
   .container {
     margin-bottom: 10.1rem;
   }
+
+  .send {
+    position: relative;
+    height: 52px;
+  margin-bottom: 10px;
+  margin-top: 60px;
+  /* background-color:#d0368a; */
+  border: 2px solid black;
+
+  color: rgb(0, 0, 0);
+  border-radius: 5px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 0 20px;
+  cursor: pointer;
+  }
+
+  .send:hover {
+  background-color: #1dd583; 
+  /* background:linear-gradient(72.5deg, crimson 0%, blueviolet 99%);  */
+  color: white;
+  transform: translateY(-2px);
+}
   </style>
   

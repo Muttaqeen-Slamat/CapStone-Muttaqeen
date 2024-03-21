@@ -39,7 +39,7 @@
 
       <div class="row mt-3">
         <p class="lead">
-          CompanyName &copy;
+          CompUnit &copy; by Muttaqeen-Slamat
           <span>{{ currYear }}</span>
         </p>
       </div>

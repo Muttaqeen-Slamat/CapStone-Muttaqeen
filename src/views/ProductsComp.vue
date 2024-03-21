@@ -1,7 +1,7 @@
 <template>
     <div class="container">
-        <div class="row">
-            <h2 class="display-2">Products</h2>
+        <div class="row mt-3">
+            <h1 class="">Products</h1>
         </div>
         <!-- Search input -->
         <div class="row">
