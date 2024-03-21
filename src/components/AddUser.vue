@@ -45,8 +45,8 @@
               <input type="password" class="form-control w-50 mx-auto" placeholder="Password" v-model="payload.emailPwd">
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-            <button type="submit" class="btn btn-success" >Add User</button>
+            <button type="button" class="btn modClose" data-bs-dismiss="modal">Close</button>
+            <button type="submit" class="btn modAdd" >Add User</button>
           </div>
         </form>
       </div>
@@ -133,7 +133,54 @@
   }
 
   .modalButton:hover { 
-  background:linear-gradient(72.5deg, crimson 0%, blueviolet 99%); 
+  background-color: #1dd583; 
+  /* background:linear-gradient(72.5deg, crimson 0%, blueviolet 99%);  */
+  color: white;
+  transform: translateY(-2px);
+}
+
+.modClose{
+  position: relative;
+    height: 52px;
+  /* background-color: #d0368a; */
+  color: black;
+  border: 2px solid black;
+
+  border-radius: 5px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 0 20px;
+  cursor: pointer;
+}
+
+.modClose:hover{
+  background-color: crimson; 
+  /* background:linear-gradient(72.5deg, crimson 0%, blueviolet 99%);  */
+  color: white;
+  transform: translateY(-2px);
+}
+
+.modAdd{
+  position: relative;
+    height: 52px;
+  /* background-color: #d0368a; */
+  color: black;
+  border: 2px solid black;
+
+  border-radius: 5px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 0 20px;
+  cursor: pointer;
+}
+
+.modAdd:hover{
+  background-color: #1dd583; 
+  /* background:linear-gradient(72.5deg, crimson 0%, blueviolet 99%);  */
   color: white;
   transform: translateY(-2px);
 }
