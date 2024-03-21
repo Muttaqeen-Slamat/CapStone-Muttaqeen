@@ -52,8 +52,6 @@ export default {
 },
     methods: {
         sortProducts() {
-            // You can implement sorting logic here
-            // Example: Sort products based on price
             this.product.sort((a, b) => a.prodPrice - b.prodPrice);
         }
     },

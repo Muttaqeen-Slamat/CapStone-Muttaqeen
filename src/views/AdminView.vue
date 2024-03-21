@@ -105,15 +105,7 @@
           </table>
           </div>
         </div>
-        <div v-if="cart">
-      <h2>User's Cart</h2>
-      <ul>
-        <li v-for="item in cart" :key="item.cartID">
-          <!-- Display cart item details -->
-          {{ item.prodName }} - Quantity: {{ item.quantity }}
-        </li>
-      </ul>
-    </div>
+
 
 
 
@@ -138,14 +130,14 @@ import updateProduct from "../components/UpdateProduct.vue"
             products(){
                 return this.$store.state.products;
             },
-            cart() {
-                return this.$store.state.cart;
-            },
+            // cart() {
+            //     return this.$store.state.cart;
+            // },
         },
         mounted(){
             this.$store.dispatch("fetchUsers");
             this.$store.dispatch("fetchProducts");
-            this.$store.dispatch('fetchUserCarts');
+            // this.$store.dispatch('fetchUserCarts');
         },
         methods: {
           deleteUser(userID) {

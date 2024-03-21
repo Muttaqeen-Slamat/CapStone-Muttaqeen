@@ -30,7 +30,10 @@
               <input type="number" class="form-control w-50 mx-auto" placeholder="Age" v-model="payload.age">
           </div>
           <div class="mb-3">
-              <input type="text" class="form-control w-50 mx-auto" placeholder="Gender" v-model="payload.gender">
+            <select type="text" class="form-control w-50 mx-auto" placeholder="Gender" v-model="payload.gender">
+                <option value="Male">Male</option>    
+                <option value="Female">Female</option>    
+            </select>
           </div>
           <div class="mb-3">
               <input type="text" class="form-control w-50 mx-auto" placeholder="Role" v-model="payload.userRole">
