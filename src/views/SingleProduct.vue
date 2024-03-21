@@ -1,7 +1,7 @@
 <template>
     <div class="container">
-        <div class="row">
-            <h2 class="display-2">Product Details</h2>
+        <div class="row mt-3">
+            <h1 class="">Product Details</h1>
         </div>
         <div>
             <router-link to="/products">
@@ -11,7 +11,7 @@
         <div class="row">
             <Card v-if="product">
                 <template #cardHeader>
-                    <h4 class="card-title">{{ product.prodName }}</h4>
+                    <h6 class="card-title">{{ product.prodName }}</h6>
                 </template>
                 <template #cardBody>
                     <img :src="product.img" :alt="`${ product.prodName }`">

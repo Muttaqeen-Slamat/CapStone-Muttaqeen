@@ -35,7 +35,7 @@
     <div class="row d-flex align-items-center justify-content-center justify-content-evenly">
       <Card v-for="product in shuffledProducts" :key="product.prodID">
         <template #cardHeader>
-          <h4 class="card-title">{{ product.prodName }}</h4>
+          <h6 class="card-title">{{ product.prodName }}</h6>
         </template>
         <template #cardBody>
           <img :src="product.img" class="img-fluid" :alt="`${product.prodName}`" />

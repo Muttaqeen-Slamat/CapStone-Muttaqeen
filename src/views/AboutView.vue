@@ -1,5 +1,5 @@
 <template>
-  <div class="about">
+  <div class="about container">
     <div class="mt-3">
       <h1>Welcome to CompUnit</h1>
     </div>
