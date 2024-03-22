@@ -29,6 +29,9 @@
           <li class="nav-item" v-if="!loggedInUser">
             <router-link class="nav-link active" aria-current="page" to="/login">Login</router-link>
           </li>
+          <li class="nav-item" v-if="loggedInUser">
+            <router-link class="nav-link active" aria-current="page" to="/cart"><i class="bi bi-cart"></i></router-link>
+          </li>
           <li class="nav-item profile" v-if="loggedInUser">
             <button class="nav-link active profile text-light" @click="goToProfile" aria-current="page">{{ loggedInUser.firstName }} {{ loggedInUser.lastName }}</button>
           </li>
@@ -145,5 +148,11 @@ nav a{
   background-color: blueviolet;
   color: white;
   border-radius: 25px;
+}
+
+i{
+  border: 1px solid;
+  border-radius: 100%;
+  padding: 5px;
 }
 </style>

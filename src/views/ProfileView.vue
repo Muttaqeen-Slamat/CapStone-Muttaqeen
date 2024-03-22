@@ -1,8 +1,8 @@
 <template>
   <div>
     <!-- User Profile -->
-    <div class="container">
-      <div class="row">
+    <div class="container mt-3 mb-3">
+      <div class="row detail">
         <div class="col" v-if="user">
           <h2>{{ user.firstName }} {{ user.lastName }}</h2>
           <p>Username: {{ user.userName }}</p>
@@ -34,10 +34,10 @@
               </div>
             </form>
           </div>
-          <div>
+          <div class="mt-3 mb-3">
             <button @click="editProfile" class="editButton">Edit</button>
           </div>
-          <div class="d-flex justify-content-between">
+          <div class="d-flex justify-content-evenly p-3">
             <button @click="(event) => deleteUser(user.userID)" class="deleteButton">Delete Account</button>
             <button @click="logoutUser" class="logoutButton">Logout</button>
           </div>
@@ -176,10 +176,6 @@ export default {
   box-shadow: 5px 5px 8px rgba(0, 0, 0, 0.2);
 }
 
-.container {
-  margin-top: 75px;
-  margin-bottom: 75px;
-}
 
 input[type="text"], input[type="email"], input[type="number"] {
   border: 2px solid #ccc; /* Add border */
@@ -204,6 +200,15 @@ input[type="text"], input[type="email"], input[type="number"] {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+
+.detail{
+  border: 1px solid black;
+  border-radius: 25px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
 }
 
 
