@@ -71,7 +71,7 @@ export default {
 }
 
 .buy:hover { 
-  background-color: #1dd583; 
+  background-color: blueviolet; 
   color: white;
   transform: translateY(-2px);
 }

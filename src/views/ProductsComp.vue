@@ -34,7 +34,7 @@
                     <p class="card-text text-dark bg-gradient p-2">
                         R{{ product.prodPrice }}
                     </p>
-                    <router-link :to="{ name: 'product', params: { id: product.prodID } }">View More</router-link>
+                    <router-link :to="{ name: 'product', params: { id: product.prodID } }"><button class="btn">View More</button></router-link>
                 </template>
             </Card>
         </div>
@@ -148,6 +148,26 @@ img {
   .sort:hover { 
   background-color: #1dd583; 
   /* background:linear-gradient(72.5deg, crimson 0%, blueviolet 99%);  */
+  color: white;
+  transform: translateY(-2px);
+}
+
+.btn {
+  position: relative;
+  /* height: 52px; */
+  color: black;
+  border: 2px solid black;
+  border-radius: 5px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 0 20px;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: blueviolet;
   color: white;
   transform: translateY(-2px);
 }

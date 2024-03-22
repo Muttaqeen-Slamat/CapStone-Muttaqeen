@@ -38,11 +38,11 @@
           <h6 class="card-title">{{ product.prodName }}</h6>
         </template>
         <template #cardBody>
-          <img :src="product.img" class="img-fluid" :alt="`${product.prodName}`" />
+          <img id="img" :src="product.img" class="img-fluid" :alt="`${product.prodName}`" />
           <p class="card-text text-dark bg-gradient p-2">
             R{{ product.prodPrice }}
           </p>
-          <router-link :to="{ name: 'product', params: { id: product.prodID } }">View More</router-link>
+          <router-link :to="{ name: 'product', params: { id: product.prodID } }"><button class="btn">View More</button></router-link>
         </template>
       </Card>
     </div>
@@ -79,6 +79,11 @@ img {
   aspect-ratio: 2.5/1;
 }
 
+#img {
+    width: 200px;
+    aspect-ratio: 1/1;
+}
+
 .carousel-control-prev-icon, .carousel-control-next-icon {
   height: 100px;
   width: 100px;
@@ -95,5 +100,25 @@ img {
 
 .span1 {
   text-align: end;
+}
+
+.btn {
+  position: relative;
+  /* height: 52px; */
+  color: black;
+  border: 2px solid black;
+  border-radius: 5px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 0 20px;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: blueviolet;
+  color: white;
+  transform: translateY(-2px);
 }
 </style>

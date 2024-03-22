@@ -175,4 +175,9 @@ img{
   transform: translate(2%,-2px);
   box-shadow: 5px 5px 8px rgba(0, 0, 0, 0.2);
 }
+
+#prodImg {
+    width: 200px;
+    aspect-ratio: 1/1;
+}
 </style>
