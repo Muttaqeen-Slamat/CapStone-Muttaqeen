@@ -7,13 +7,7 @@
           <img src="https://i.postimg.cc/bwd2X7dP/GPu-Sale.png" class="" alt="..." />
         </div>
         <div class="carousel-item">
-          <img src="https://i.postimg.cc/vBmxDB2J/Untitled-design-1.png" class="img-fluid" alt="..." />
-        </div>
-        <div class="carousel-item">
-          <img src="https://i.postimg.cc/pLgsfNMc/Untitled-design.png" class="img-fluid" alt="..." />
-        </div>
-        <div class="carousel-item">
-          <img src="https://i.postimg.cc/vBmxDB2J/Untitled-design-1.png" class="img-fluid" alt="..." />
+          <img src="https://i.postimg.cc/JnVN3YbZ/CPU-Sale.png" class="img-fluid" alt="..." />
         </div>
       </div>
       <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying"

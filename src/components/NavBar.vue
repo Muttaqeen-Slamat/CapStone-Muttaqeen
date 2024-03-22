@@ -2,7 +2,7 @@
   <div>
     <nav class="navbar navbar-expand-lg bg-body-secondary" id="nav">
       <div class="container-fluid">
-        <a class="navbar-brand" href="/">Logo Placeholder</a>
+        <a class="navbar-brand fw-bold " id="logo" href="/">Comp-Unit</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -101,6 +101,10 @@ export default {
 
 #nav{
   background:linear-gradient(45deg, #1dd583 50%, white 50%);; 
+}
+
+#logo{
+  font-size: larger;
 }
 
 nav a{
