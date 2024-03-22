@@ -1,6 +1,8 @@
 <template>
     <div>
-        <AddUser/>
+      <SpinnerComp v-if="loading" />
+      <div v-else>
+      <AddUser />
     </div>
     <div>
         <div class="container ">
@@ -110,7 +112,7 @@
 
 
 
-
+      </div>
     </div>
 </template>
 
@@ -119,10 +121,17 @@ import AddUser from "../components/AddUser"
 import AddProduct from '../components/AddProduct' 
 import UpdateUser from "@/components/UpdateUser.vue";
 import updateProduct from "../components/UpdateProduct.vue"
+import SpinnerComp from "@/components/SpinnerComp.vue";
+
     export default {
         components:{
-            AddUser,AddProduct,UpdateUser,updateProduct
+            AddUser,AddProduct,UpdateUser,updateProduct,SpinnerComp
         },
+        data() {
+    return {
+      loading: true, // Initially set loading to true
+    };
+  },
         computed:{
             users(){
                 return this.$store.state.users;
@@ -135,9 +144,18 @@ import updateProduct from "../components/UpdateProduct.vue"
             // },
         },
         mounted(){
-            this.$store.dispatch("fetchUsers");
-            this.$store.dispatch("fetchProducts");
-            // this.$store.dispatch('fetchUserCarts');
+          Promise.all([
+      this.$store.dispatch("fetchUsers"),
+      this.$store.dispatch("fetchProducts"),
+    ])
+      .then(() => {
+        // Set loading to false when both fetches are done
+        this.loading = false;
+      })
+      .catch((error) => {
+        console.error("Error fetching data:", error);
+        // Handle error if needed
+      });
         },
         methods: {
           deleteUser(userID) {

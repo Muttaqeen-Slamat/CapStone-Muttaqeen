@@ -1,5 +1,9 @@
 <template>
-    <div class="container-fluid">
+      <div>
+    <!-- Spinner -->
+    <SpinnerComp v-if="loading" />
+    <div v-else>
+      <div class="container-fluid">
         <div class="row mt-3">
             <h1 class="">Products</h1>
         </div>
@@ -38,18 +42,22 @@
                 </template>
             </Card>
         </div>
+      </div>
     </div>
+  </div>
 </template>
 
 <script>
 import Card from '@/components/Card.vue';
+import SpinnerComp from '@/components/SpinnerComp.vue';
 export default {
     name: 'ProductsView',
     components: {
-        Card
+        Card,SpinnerComp
     },
     data() {
         return {
+            loading: true,
             searchQuery: '',
             selectedFilter: ''
         };
@@ -89,8 +97,17 @@ export default {
         }
     },
     mounted() {
-        this.$store.dispatch('fetchProducts');
-    }
+    // Fetch products and update loading state accordingly
+    this.$store.dispatch('fetchProducts')
+      .then(() => {
+        this.loading = false;
+      })
+      .catch(error => {
+        console.error('Error fetching products:', error);
+        // Handle error if needed
+        this.loading = false;
+      });
+  }
 }
 </script>
 
