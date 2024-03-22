@@ -64,6 +64,7 @@ export default {
   background-color: rgb(212, 212, 212);
   color: black;
   text-decoration-style: none ;
+  background:linear-gradient(45deg, #1dd583 50%, white 50%);; 
 }
 
 
