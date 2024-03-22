@@ -14,7 +14,7 @@
                     <h6 class="card-title">{{ product.prodName }}</h6>
                 </template>
                 <template #cardBody>
-                    <img :src="product.img" :alt="`${ product.prodName }`">
+                    <img id="img" :src="product.img" :alt="`${ product.prodName }`">
                     <p class="card-text text-dark  p-2">
                         Category: {{ product.category }}
                     </p>
@@ -82,6 +82,11 @@ img{
     width: 200px;
 }
 
+#img {
+    width: 200px;
+    aspect-ratio: 1/1;
+}
+
 .btn {
   position: relative;
   height: 52px;
@@ -97,7 +102,7 @@ img{
 }
 
 .btn:hover {
-  background-color: #1dd583;
+  background-color: blueviolet;
   color: white;
   transform: translateY(-2px);
 }
@@ -116,7 +121,7 @@ img{
 }
 
 .return:hover {
-  background-color: #1dd583;
+  background-color: blueviolet;
   color: white;
   transform: translateY(-2px);
 }

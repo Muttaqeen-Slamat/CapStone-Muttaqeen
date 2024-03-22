@@ -39,7 +39,7 @@ export default {
 }
 
 ::-webkit-scrollbar-thumb {
-  background:linear-gradient(72.5deg, crimson 0%, blueviolet 99%);; 
+  background:linear-gradient(72.5deg, #1dd583 0%, blueviolet 99%);; 
   border-radius: 10px;
 }
 

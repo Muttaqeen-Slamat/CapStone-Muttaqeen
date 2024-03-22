@@ -124,7 +124,7 @@ img {
   }
 
   .filterB:hover { 
-  background-color: #1dd583; 
+  background-color: blueviolet; 
   /* background:linear-gradient(72.5deg, crimson 0%, blueviolet 99%);  */
   color: white;
   transform: translateY(-2px);
@@ -146,7 +146,7 @@ img {
   }
 
   .sort:hover { 
-  background-color: #1dd583; 
+  background-color: blueviolet; 
   /* background:linear-gradient(72.5deg, crimson 0%, blueviolet 99%);  */
   color: white;
   transform: translateY(-2px);

@@ -57,6 +57,11 @@ export default {
 </script>
 
 <style scoped>
+
+.container{
+  height: 75vh;
+}
+
 .buy {
   position: relative;
   color: black;
